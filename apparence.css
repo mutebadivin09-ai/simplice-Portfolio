@@ -1,0 +1,846 @@
+
+:root {
+
+    --noir: #0B0B0B;
+    --noir-2: #121212;
+    --carte: #181818;
+
+    --blanc: #F2EDE3;
+    --gris: #A7A19A;
+
+    --or: #C9A227;
+    --or-clair: #E0B93D;
+
+    --bordure: #2A2A2A;
+
+    --serif: Georgia, "Times New Roman", serif;
+    --sans: Arial, Helvetica, sans-serif;
+
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    background: var(--noir);
+
+    color: var(--blanc);
+
+    font-family: var(--sans);
+
+    line-height: 1.7;
+
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+::selection {
+
+    background: var(--or);
+
+    color: var(--noir);
+
+}
+
+
+/* ==================================================
+   CONTENEUR
+================================================== */
+
+.container {
+
+    width: min(
+        1180px,
+        calc(100% - 50px)
+    );
+
+    margin: auto;
+
+}
+
+
+/* ==================================================
+   NAVIGATION
+================================================== */
+
+.navbar {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background:
+        rgba(11, 11, 11, 0.9);
+
+    border-bottom:
+        1px solid
+        rgba(201, 162, 39, 0.15);
+
+    backdrop-filter: blur(12px);
+
+}
+
+
+.navbar {
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+.navbar .logo {
+
+    font-family: var(--serif);
+
+    font-size: 1.4rem;
+
+    font-weight: bold;
+
+    letter-spacing: 0.12em;
+
+    padding-left: 30px;
+
+}
+
+
+.navbar nav {
+
+    margin-left: auto;
+
+    padding: 22px 30px;
+
+    display: flex;
+
+    gap: 22px;
+
+}
+
+
+.navbar nav a {
+
+    color: var(--gris);
+
+    font-size: 0.75rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
+
+    transition: 0.3s;
+
+}
+
+
+.navbar nav a:hover {
+
+    color: var(--or);
+
+}
+
+
+/* ==================================================
+   ACCUEIL
+================================================== */
+
+.accueil {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-bottom:
+        1px solid var(--bordure);
+
+}
+
+
+.accueil::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    right: -250px;
+    top: 15%;
+
+    border:
+        1px solid
+        rgba(201, 162, 39, 0.15);
+
+    transform: rotate(45deg);
+
+}
+
+
+.accueil-contenu {
+
+    width: min(
+        1180px,
+        calc(100% - 50px)
+    );
+
+    margin: auto;
+
+    padding-top: 80px;
+
+}
+
+
+.accueil h1 {
+
+    font-family: var(--serif);
+
+    font-size: clamp(
+        5rem,
+        15vw,
+        11rem
+    );
+
+    line-height: 0.85;
+
+    letter-spacing: -0.06em;
+
+}
+
+
+.accueil h2 {
+
+    margin-top: 35px;
+
+    color: var(--gris);
+
+    font-size: 1.1rem;
+
+    font-weight: normal;
+
+}
+
+
+.accueil .signature {
+
+    margin-top: 30px;
+
+    color: var(--or-clair);
+
+    font-family: var(--serif);
+
+    font-size: clamp(
+        1.5rem,
+        3vw,
+        2.5rem
+    );
+
+    font-style: italic;
+
+}
+
+
+.accueil-contenu > p:not(.signature) {
+
+    max-width: 750px;
+
+    margin-top: 20px;
+
+    color: var(--gris);
+
+}
+
+
+.accueil-contenu strong {
+
+    color: var(--blanc);
+
+}
+
+
+.section {
+
+    padding: 120px 0;
+
+    border-bottom:
+        1px solid var(--bordure);
+
+}
+
+
+.section:nth-child(even) {
+
+    background: var(--noir-2);
+
+}
+
+
+.section h2,
+.phrase-definition h2 {
+
+    margin-bottom: 60px;
+
+    font-family: var(--serif);
+
+    font-size: clamp(
+        2.8rem,
+        6vw,
+        5rem
+    );
+
+    font-weight: normal;
+
+    line-height: 1;
+
+}
+
+
+.section p {
+
+    color: var(--gris);
+
+    max-width: 850px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.section strong {
+
+    color: var(--blanc);
+
+}
+
+
+.phrases {
+
+    margin: 40px 0;
+
+    padding-left: 25px;
+
+    border-left: 2px solid var(--or);
+
+}
+
+
+.phrases p {
+
+    margin-bottom: 10px;
+
+    color: var(--blanc);
+
+    font-family: var(--serif);
+
+    font-size: 1.2rem;
+
+}
+
+
+blockquote {
+
+    margin-top: 35px;
+
+    padding: 25px;
+
+    border-left: 2px solid var(--or);
+
+    background:
+        rgba(201, 162, 39, 0.05);
+
+    color: var(--blanc);
+
+    font-family: var(--serif);
+
+    font-size: 1.3rem;
+
+}
+
+
+.univers {
+
+    background: var(--noir-2) !important;
+
+}
+
+
+.univers-card {
+
+    position: relative;
+
+    margin-bottom: 20px;
+
+    padding: 40px;
+
+    background: var(--carte);
+
+    border:
+        1px solid var(--bordure);
+
+    transition: 0.3s;
+
+}
+
+
+.univers-card:hover {
+
+    border-color: var(--or);
+
+    transform: translateY(-4px);
+
+}
+
+
+.univers-card h3 {
+
+    margin-bottom: 25px;
+
+    color: var(--or-clair);
+
+    font-family: var(--serif);
+
+    font-size: 2rem;
+
+    font-weight: normal;
+
+}
+
+
+.univers-card p {
+
+    max-width: 900px;
+
+}
+
+
+.phrase-forte {
+
+    color: var(--or-clair) !important;
+
+    font-family: var(--serif);
+
+    font-style: italic;
+
+}
+
+
+/* ==================================================
+   VISION
+================================================== */
+
+.vision {
+
+    background: var(--noir) !important;
+
+}
+
+
+.vision .phrase-forte {
+
+    font-size: 2rem;
+
+}
+
+
+.vision-lines {
+
+    margin: 40px 0;
+
+    padding: 25px 0;
+
+    border-top:
+        1px solid var(--bordure);
+
+    border-bottom:
+        1px solid var(--bordure);
+
+}
+
+
+.vision-lines p {
+
+    margin-bottom: 10px;
+
+    color: var(--blanc);
+
+    font-family: var(--serif);
+
+    font-size: 1.3rem;
+
+}
+
+
+.creation {
+
+    margin-bottom: 20px;
+
+    padding: 40px;
+
+    background: var(--carte);
+
+    border:
+        1px solid var(--bordure);
+
+}
+
+
+.creation h3 {
+
+    color: var(--or);
+
+    font-size: 0.8rem;
+
+    letter-spacing: 0.12em;
+
+}
+
+
+.creation h4 {
+
+    margin-top: 25px;
+
+    font-family: var(--serif);
+
+    font-size: 2rem;
+
+    font-weight: normal;
+
+}
+
+
+.creation .sous-titre {
+
+    color: var(--or-clair);
+
+    font-family: var(--serif);
+
+    font-style: italic;
+
+}
+
+
+/* ==================================================
+   COMPÉTENCES
+================================================== */
+
+.competences {
+
+    background: var(--noir-2) !important;
+
+}
+
+
+.competence {
+
+    margin-bottom: 25px;
+
+    padding: 30px;
+
+    border:
+        1px solid var(--bordure);
+
+    background: var(--carte);
+
+}
+
+
+.competence h3 {
+
+    margin-bottom: 20px;
+
+    color: var(--or-clair);
+
+    font-family: var(--serif);
+
+    font-size: 1.8rem;
+
+    font-weight: normal;
+
+}
+
+
+.competence ul {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    list-style: none;
+
+}
+
+
+.competence li {
+
+    padding: 8px 14px;
+
+    border:
+        1px solid var(--bordure);
+
+    color: var(--gris);
+
+    font-size: 0.85rem;
+
+}
+
+
+/* ==================================================
+   PHRASE QUI ME DÉFINIT
+================================================== */
+
+.phrase-definition {
+
+    padding: 130px 0;
+
+    background: var(--or);
+
+    color: var(--noir);
+
+}
+
+
+.phrase-definition h2 {
+
+    color: rgba(11, 11, 11, 0.65);
+
+}
+
+
+.phrase-definition blockquote {
+
+    margin: 0;
+
+    padding: 0;
+
+    max-width: 1000px;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--noir);
+
+    font-family: var(--serif);
+
+    font-size: clamp(
+        2.5rem,
+        6vw,
+        5rem
+    );
+
+    line-height: 1.1;
+
+    font-style: italic;
+
+}
+
+
+/* ==================================================
+   CONTACT
+================================================== */
+
+.contact {
+
+    background: var(--noir) !important;
+
+}
+
+
+.contact-informations {
+
+    margin: 40px 0;
+
+    padding: 25px 0;
+
+    border-top:
+        1px solid var(--bordure);
+
+    border-bottom:
+        1px solid var(--bordure);
+
+}
+
+
+.contact-informations p {
+
+    margin-bottom: 12px;
+
+}
+
+
+.contact h3 {
+
+    margin-bottom: 15px;
+
+    color: var(--or-clair);
+
+    font-family: var(--serif);
+
+    font-size: 1.5rem;
+
+    font-weight: normal;
+
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer {
+
+    padding: 30px;
+
+    background: var(--noir-2);
+
+    text-align: center;
+
+    color: var(--or);
+
+    font-family: var(--serif);
+
+    letter-spacing: 0.1em;
+
+}
+
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media (max-width: 900px) {
+
+    .navbar {
+
+        position: relative;
+
+    }
+
+
+    .navbar .logo {
+
+        padding: 15px 20px;
+
+    }
+
+
+    .navbar nav {
+
+        padding: 15px 20px;
+
+        overflow-x: auto;
+
+        gap: 18px;
+
+    }
+
+
+    .navbar {
+
+        display: block;
+
+    }
+
+
+    .accueil-contenu {
+
+        padding: 80px 0;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .container,
+    .accueil-contenu {
+
+        width: calc(100% - 32px);
+
+    }
+
+
+    .navbar .logo {
+
+        display: block;
+
+    }
+
+
+    .navbar nav {
+
+        display: flex;
+
+        justify-content: flex-start;
+
+    }
+
+
+    .accueil h1 {
+
+        font-size: 22vw;
+
+    }
+
+
+    .section {
+
+        padding: 80px 0;
+
+    }
+
+
+    .univers-card,
+    .creation,
+    .competence {
+
+        padding: 25px;
+
+    }
+
+
+    .phrase-definition {
+
+        padding: 90px 0;
+
+    }
+
+
+    .phrase-definition blockquote {
+
+        font-size: 2.5rem;
+
+    }
+
+}
